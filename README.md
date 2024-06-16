@@ -17,4 +17,8 @@ cmake ..
 make check -j $(nproc)
 ```
 
+## Build amdprofilecontrol-python python module
+
+```bash
 c++ -O3 -Wall -shared -std=c++11 -fPIC $(python3-config --includes) -I extern/pybind11/include -I /opt/AMDuProf_4.0-341/include AMDProfileControl/amdprofilecontrol-python.cpp  -o amdprofilecontrol$(python3-config --extension-suffix) -L /opt/AMDuProf_4.0-341/lib/x64  -lAMDProfileController -lrt -pthread
+```
