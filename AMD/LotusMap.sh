@@ -1,12 +1,11 @@
 # !/bin/bash
 
-program_path_prefix="/home/rbachkaniwala3/work/rajveerb_AMDProfileControl-python/low_level_func"
+program_path_prefix="/home/rbachkaniwala3/work/rajveerb_AMDProfileControl-python/AMD"
 python_path="/home/rbachkaniwala3/work/anaconda3/envs/amduprof/bin/python"
-programs=("Collation.py")
-# programs=("Loader.py" "Normalize.py" "RandomHorizontalFlip.py" "RandomResizedCrop.py" "ToTensor.py" "Collation.py")
+programs=("Loader.py" "Normalize.py" "RandomHorizontalFlip.py" "RandomResizedCrop.py" "ToTensor.py" "Collation.py")
 amduprof_record="AMDuProfCLI collect --config tbp --start-paused"
 amduprof_report="AMDuProfCLI report"
-csv_dir="/home/rbachkaniwala3/work/rajveerb_AMDProfileControl-python/low_level_func/logs"
+csv_dir="/home/rbachkaniwala3/work/rajveerb_AMDProfileControl-python/AMD/logs"
 
 # check if all the above directories exist
 if [ ! -d "$program_path_prefix" ]; then
@@ -29,7 +28,7 @@ do
 done
 
 
-amduprof_result_dir="/home/rbachkaniwala3/low_level_func"
+amduprof_result_dir="/home/rbachkaniwala3/AMD"
 
 # Running multiple times and taking "AND" operation of the reported function
 total_runs=2
@@ -57,7 +56,3 @@ do
 done
 chmod 777 -R $csv_dir
 echo "Done running all programs"
-
-# vtune -collect hotspots -start-paused -result-dir ~/collation_tester_v2 -- /proj/prismgt-PG0/anaconda3/envs/torch2/bin/python rbachkaniwala3/code/collation_tester.py
-# chmod 777 -R /proj/prismgt-PG0/rbachkaniwala3/code/low_level_func/
-# vtune -report hotspots -result-dir /root/collation_tester_v2/ -format csv -csv-delimiter comma -report-output ./low_level_func_v2.csv
