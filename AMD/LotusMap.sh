@@ -1,11 +1,11 @@
 # !/bin/bash
 
-program_path_prefix="/home/rbachkaniwala3/work/rajveerb_AMDProfileControl-python/AMD"
-python_path="/home/rbachkaniwala3/work/anaconda3/envs/amduprof/bin/python"
+program_path_prefix="/home/hlanka3/amdprofilecontrol/AMD"
+python_path="/home/hlanka3/miniconda3/envs/torchtest/bin/python"
 programs=("Loader.py" "Normalize.py" "RandomHorizontalFlip.py" "RandomResizedCrop.py" "ToTensor.py" "Collation.py")
 amduprof_record="AMDuProfCLI collect --config tbp --start-paused"
 amduprof_report="AMDuProfCLI report"
-csv_dir="/home/rbachkaniwala3/work/rajveerb_AMDProfileControl-python/AMD/logs"
+csv_dir="/home/hlanka3/amdprofilecontrol/AMD"
 
 # check if all the above directories exist
 if [ ! -d "$program_path_prefix" ]; then
@@ -28,10 +28,10 @@ do
 done
 
 
-amduprof_result_dir="/home/rbachkaniwala3/AMD"
+amduprof_result_dir="/home/hlanka3/AMD_Temp"
 
 # Running multiple times and taking "AND" operation of the reported function
-total_runs=2
+total_runs=1
 
 for run in $(seq 1 $total_runs)
 do

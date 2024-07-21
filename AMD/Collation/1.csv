@@ -1,0 +1,75 @@
+
+"AMD uProf (Version:4.0.341.0)"
+PERFORMANCE ANALYSIS REPORT
+
+EXECUTION
+Target Path:,"/home/hlanka3/miniconda3/envs/torchtest/bin/python"
+Command Line Arguments:,"/home/hlanka3/amdprofilecontrol/AMD/Collation.py "
+Working Directory:,"/data/home/hlanka3/amdprofilecontrol/AMD"
+Environment Variables:
+CPU Details:,"Family(0x19), Model(0x1), Number of Cores(128)"
+Operating System:,"LinuxUbuntu 20.04.5 LTS-64 Kernel:5.4.0-137-generic"
+
+PROFILE DETAILS
+Profile Session Type:,"Time-based Sampling"
+Profile Scope:,"Single Application"
+CPU Mask:,"0-127"
+CPU Affinity Mask:,"0-127"
+Profile Start Time:,"Sat Jul 20 22:43:21 2024"
+Profile End Time:,"Sat Jul 20 22:43:25 2024"
+Profile Duration:,"0.013 seconds"
+Data Folder:,"/home/hlanka3/AMD_Temp/AMDuProf-python-TBP_Jul-20-2024_22-43-21"
+Virtual Machine:,"No"
+Call Stack Sampling:,"False"
+
+MONITORED EVENTS
+TBP Events:,Name,Interval,Description
+,"CPU_TIME","1.000 milliseconds","CPU Time is the time in which the CPU core is executing the code."
+
+"100 HOTTEST FUNCTIONS (Sort Event - CPU_TIME)"
+FUNCTION,"CPU_TIME",Module
+"gomp_barrier_wait_end",124.0000,"/data/home/hlanka3/miniconda3/envs/torchtest/lib/libgomp.so.1.0.0"
+"gomp_team_barrier_wait_end",45.0000,"/data/home/hlanka3/miniconda3/envs/torchtest/lib/libgomp.so.1.0.0"
+"deduce_unreachable",29.0000,"/data/home/hlanka3/miniconda3/envs/torchtest/bin/python3.11"
+"gomp_thread_start",3.0000,"/data/home/hlanka3/miniconda3/envs/torchtest/lib/libgomp.so.1.0.0"
+"void at::internal::invoke_parallel<at::TensorIteratorBase::for_each(c10::function_ref<void (char**, long const*, long, long)>, long)::{lambda(long, long)#1}>(long, long, long, at::TensorIteratorBase::for_each(c10::function_ref<void (char**, long const*, long, long)>, long)::{lambda(long, long)#1} const&)",1.0000,"/data/home/hlanka3/miniconda3/envs/torchtest/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so"
+"gomp_barrier_wait",1.0000,"/data/home/hlanka3/miniconda3/envs/torchtest/lib/libgomp.so.1.0.0"
+"malloc_consolidate",1.0000,"/usr/lib/x86_64-linux-gnu/libc-2.31.so"
+
+"100 HOTTEST PROCESSES (Sort Event - CPU_TIME)"
+PROCESS,"CPU_TIME"
+"python (PID:7910)",204.0000
+
+"100 HOTTEST MODULES (Sort Event - CPU_TIME)"
+MODULE,"CPU_TIME"
+"/data/home/hlanka3/miniconda3/envs/torchtest/lib/libgomp.so.1.0.0",173.0000
+"/data/home/hlanka3/miniconda3/envs/torchtest/bin/python3.11",29.0000
+"/data/home/hlanka3/miniconda3/envs/torchtest/lib/python3.11/site-packages/torch/lib/libtorch_cpu.so",1.0000
+"/usr/lib/x86_64-linux-gnu/libc-2.31.so",1.0000
+
+"100 HOTTEST THREADS (Sort Event - CPU_TIME)"
+THREAD,"CPU_TIME"
+"python [TID:7910] (PID:7910)",30.0000
+"python [TID:7971] (PID:7910)",17.0000
+"python [TID:7962] (PID:7910)",16.0000
+"python [TID:7973] (PID:7910)",16.0000
+"python [TID:7979] (PID:7910)",15.0000
+"python [TID:7927] (PID:7910)",12.0000
+"python [TID:7963] (PID:7910)",12.0000
+"python [TID:7972] (PID:7910)",10.0000
+"python [TID:7923] (PID:7910)",9.0000
+"python [TID:7960] (PID:7910)",8.0000
+"python [TID:7964] (PID:7910)",8.0000
+"python [TID:7952] (PID:7910)",7.0000
+"python [TID:7956] (PID:7910)",7.0000
+"python [TID:7969] (PID:7910)",5.0000
+"python [TID:7974] (PID:7910)",5.0000
+"python [TID:7953] (PID:7910)",4.0000
+"python [TID:7957] (PID:7910)",4.0000
+"python [TID:7965] (PID:7910)",4.0000
+"python [TID:7924] (PID:7910)",3.0000
+"python [TID:7970] (PID:7910)",3.0000
+"python [TID:7975] (PID:7910)",3.0000
+"python [TID:7954] (PID:7910)",2.0000
+"python [TID:7958] (PID:7910)",2.0000
+"python [TID:7961] (PID:7910)",2.0000

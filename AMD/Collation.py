@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/home/rbachkaniwala3/work/rajveerb_AMDProfileControl-python')
+sys.path.append('/home/hlanka3/amdprofilecontrol')
 import torchvision.transforms as transforms
 import torch.utils.data
 from PIL import Image
