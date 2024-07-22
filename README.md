@@ -17,3 +17,18 @@ After the python file in question has been modified, we would actually run
 
 ## Installation 
 
+First, begin by setting the AMDuProf environment variable like so
+
+    export AMDuProf=/path/to/your/amduprof
+
+This build assumes you have AMDuProf installed. The default path for AMDuProf is set in /opt/.
+
+Additionally, the build only works currently with AMDuProf_4.0-341.
+
+After the environment variable has been set run
+
+    python setup.py install
+
+## References
+
+* [AMDuProf User Guide](https://www.amd.com/content/dam/amd/en/documents/developer/uprof-v4.0-gaGA-user-guide.pdf)
