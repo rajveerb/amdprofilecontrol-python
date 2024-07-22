@@ -4,7 +4,6 @@ import pybind11
 
 class CustomBuildExt(build_ext):
     def build_extensions(self):
-        # Include the Pybind11 headers
         for ext in self.extensions:
             ext.include_dirs.append(pybind11.get_include())
             ext.include_dirs.append('/opt/AMDuProf_4.0-341/include')  # Include AMDuProf headers
@@ -15,7 +14,7 @@ class CustomBuildExt(build_ext):
 amdprofilecontrol_module = Extension(
     'amdprofilecontrol',
     sources=['AMDProfileControl/amdprofilecontrol-python.cpp'],
-    include_dirs=[],
+    include_dirs=[pybind11.get_include()],
     library_dirs=['/opt/AMDuProf_4.0-341/lib/x64'],
     libraries=['AMDProfileController'],
     extra_compile_args=['-O3', '-Wall', '-shared', '-std=c++11', '-fPIC'],
@@ -31,9 +30,6 @@ setup(
     long_description_content_type='text/markdown',
     ext_modules=[amdprofilecontrol_module],
     packages=find_packages(),
-    install_requires=[
-        'pybind11>=2.6.1'
-    ],
     cmdclass={
         'build_ext': CustomBuildExt
     },
