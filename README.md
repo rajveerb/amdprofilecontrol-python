@@ -25,9 +25,18 @@ This build assumes you have AMDuProf installed. The default path for AMDuProf is
 
 Additionally, the build only works currently with AMDuProf_4.0-341.
 
-After the environment variable has been set run
+After the environment variable has been set you can either run:
 
+    pip install pybind11
     python setup.py install
+
+or:
+
+    pip install .
+
+or if you want a local development installation that generates a shared library run:
+
+    pip install -e .
 
 ## References
 
